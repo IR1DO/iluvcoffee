@@ -1,5 +1,6 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, Entity, Index, PrimaryColumn } from 'typeorm';
 
+@Index(['name', 'type'])
 @Entity()
 export class Event {
   @PrimaryColumn()
@@ -8,6 +9,7 @@ export class Event {
   @Column()
   type: string;
 
+  @Index()
   @Column()
   name: string;
 
